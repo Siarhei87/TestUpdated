@@ -11,6 +11,8 @@
 		E29E38FB27870A490076A703 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E38FA27870A490076A703 /* ContentView.swift */; };
 		E29E38FD27870A4C0076A703 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29E38FC27870A4C0076A703 /* Assets.xcassets */; };
 		E29E390027870A4C0076A703 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E29E38FF27870A4C0076A703 /* Preview Assets.xcassets */; };
+		E29E390927870DE70076A703 /* ImageValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E390827870DE60076A703 /* ImageValue.swift */; };
+		E29E390C27870E070076A703 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29E390B27870E070076A703 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		E29E38FA27870A490076A703 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E29E38FC27870A4C0076A703 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E29E38FF27870A4C0076A703 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E29E390627870CEB0076A703 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E29E390827870DE60076A703 /* ImageValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageValue.swift; sourceTree = "<group>"; };
+		E29E390B27870E070076A703 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +56,12 @@
 		E29E38F727870A490076A703 /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				E29E38F827870A490076A703 /* TestApp.swift */,
-				E29E38FA27870A490076A703 /* ContentView.swift */,
-				E29E38FC27870A4C0076A703 /* Assets.xcassets */,
+				E29E390A27870DF30076A703 /* API */,
+				E29E390727870DB90076A703 /* Model */,
 				E29E38FE27870A4C0076A703 /* Preview Content */,
+				E29E390F27870EF50076A703 /* Resources */,
+				E29E390E27870EAD0076A703 /* System */,
+				E29E390D27870E930076A703 /* Views */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -65,6 +72,47 @@
 				E29E38FF27870A4C0076A703 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E29E390727870DB90076A703 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E29E390827870DE60076A703 /* ImageValue.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E29E390A27870DF30076A703 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E29E390B27870E070076A703 /* Api.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		E29E390D27870E930076A703 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E29E38FA27870A490076A703 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E29E390E27870EAD0076A703 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				E29E38F827870A490076A703 /* TestApp.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		E29E390F27870EF50076A703 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E29E38FC27870A4C0076A703 /* Assets.xcassets */,
+				E29E390627870CEB0076A703 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +187,8 @@
 			files = (
 				E29E38FB27870A490076A703 /* ContentView.swift in Sources */,
 				E29E38F927870A490076A703 /* TestApp.swift in Sources */,
+				E29E390C27870E070076A703 /* Api.swift in Sources */,
+				E29E390927870DE70076A703 /* ImageValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +322,7 @@
 				DEVELOPMENT_TEAM = U42JKQ2R63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Test/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -301,6 +352,7 @@
 				DEVELOPMENT_TEAM = U42JKQ2R63;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Test/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
