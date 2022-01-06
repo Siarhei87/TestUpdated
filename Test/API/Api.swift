@@ -35,20 +35,22 @@ class Api {
           print("error: ", error)
         }
       }
-    }.resume()
+    }
+    .resume()
   }
   
   func getImage(urlString: String, completion: @escaping (Data?) -> Void) {
     guard let url = URL(string: "http://dev.bgsoft.biz/task/credits.json") else {
-          completion(nil)
-          return
+      completion(nil)
+      return
+    }
+    URLSession.shared.dataTask(with: url) { (data, response, error) in
+      guard error == nil, let data = data else {
+        completion(nil)
+        return
       }
-      URLSession.shared.dataTask(with: url) { (data, response, error) in
-          guard error == nil, let data = data else {
-              completion(nil)
-              return
-          }
-          completion(data)
-      } .resume()
+      completion(data)
+    }
+    .resume()
   }
 }
