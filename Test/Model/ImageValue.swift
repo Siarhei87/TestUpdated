@@ -1,10 +1,13 @@
 import Foundation
 
 // MARK: - ImageDataValue
-struct ImageDataValue: Codable, Identifiable {
+struct ImageDataValue: Codable, Comparable, Identifiable {
+  static func < (lhs: ImageDataValue, rhs: ImageDataValue) -> Bool {
+    lhs.self < rhs.self
+  }
+  
   let id = UUID().uuidString
-  let photoURL: String?
-  let userURL: String?
+  let photoURL, userURL: String?
   let userName: String?
   let colors: [String]?
   
