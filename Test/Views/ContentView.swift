@@ -6,21 +6,32 @@ struct ContentView: View {
   
   var body: some View {
     
-    List {
-      ForEach(content.sorted(by: >), id: \.key) { key, value in
-        HStack {
-          Text(value.userName!)
-          Spacer()
-          CustomImageView(fullImageUrlByName(key))
+    NavigationView {
+    
+    ScrollView(.horizontal, showsIndicators: false) {
+      HStack {
+        ForEach(content.sorted(by: >), id: \.key) { key, value in
+          ZStack {
+            
+            CustomImageView(fullImageUrlByName(key))
+            
+            Spacer()
+            
+            Text(value.userName!)
+              .background(Color.white)
+              .foregroundColor(.black)
+              .padding(.top, 500)
+          }
         }
       }
     }
-    
     .onAppear() {
       Api().getInfo { receivedData in
         self.content = receivedData
       }
     }
+    .navigationBarTitle("Images")
+  }
   }
   
   func fullImageUrlByName(_ name: String) -> String {
@@ -42,9 +53,13 @@ struct CustomImageView: View {
   }
   
   var body: some View {
+    
     Image(uiImage: image)
       .resizable()
-      .aspectRatio(1, contentMode: .fit)
+      .scaledToFill()
+      .frame(width: 350, height: 700)
+      .cornerRadius(20)
+      .shadow(color: .black, radius: 5)
     
       .onReceive(imageLoader.$image) { image in
         self.image = image
